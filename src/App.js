@@ -4,6 +4,7 @@ import "./App.css";
 import Auth from "./components/Authed";
 import NoAuth from "./components/NotAuthed";
 import ListItem from "./components/ListItem";
+import UnorderedList from "./components/UnorderedList";
 
 function App() {
   const auth = false;
@@ -12,11 +13,12 @@ function App() {
   return (
     <div className="App">
       {auth ? <Auth /> : <NoAuth />}
-      <ul>
+
+      <UnorderedList>
         {arrayForFun.map((num, id) => (
-          <ListItem key={id} aProp={num} anotherProp={num * 2} />
+          <ListItem key={id}>{num}</ListItem>
         ))}
-      </ul>
+      </UnorderedList>
     </div>
   );
 }
